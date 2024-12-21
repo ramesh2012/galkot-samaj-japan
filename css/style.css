@@ -45,6 +45,12 @@ nav ul.menu.active {
   }
 }
 
+@media (max-width: 768px) {
+  .logo {
+    margin-left: 0;
+  }
+}
+
 
 .descp {
   /* background-color: #e0f7fa; */

@@ -8,6 +8,34 @@ metaImage.attributes[1].nodeValue = window.location.href + 'thumbnail.png'
 const metaDescription = metas.find((m) => m.attributes[0].nodeValue === 'og:description')
 metaDescription.attributes[1].nodeValue = 'यो गल्कोट समाज जापानद्वारा प्रत्येक वर्ष गर्दै आइरहेको सागंगितीक कार्यक्रम को डिजाइन बनाउने टुल हो। तपाईंले आफ्नो मनपर्ने फोटो चयन गरेर फेस्टिवल ब्यानर बनाउन सक्नुहुन्छ।'
 
+function adjustLogoMargin() {
+    const logoContainer = document.getElementById('logo-container');
+    if (window.matchMedia('(min-width: 800px)').matches) {
+        logoContainer.style.marginLeft = '25%';
+    } else {
+        logoContainer.style.marginLeft = '';
+    }
+}
+
+adjustLogoMargin();
+window.addEventListener('resize', adjustLogoMargin);
+
+document.getElementById('developerLink').addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById('developerModal').style.display = 'block';
+});
+
+document.querySelector('.close').addEventListener('click', function() {
+    document.getElementById('developerModal').style.display = 'none';
+});
+
+window.addEventListener('click', function(event) {
+    if (event.target == document.getElementById('developerModal')) {
+        document.getElementById('developerModal').style.display = 'none';
+    }
+});
+
+
 function isPc() {
     const userAgent = navigator.userAgent;
     const mobileKeywords = [
