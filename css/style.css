@@ -10,9 +10,6 @@ nav {
   padding: 10px 20px;
 }
 
-nav .logo img {
-  /* width: 150px;  Adjust logo size as needed */
-}
 nav ul.menu {
   list-style: none;
   padding: 0;
@@ -38,8 +35,14 @@ nav ul.menu li a {
   margin: 3px 0;
 }
 nav ul.menu.active {
-    display: none; 
+    display: none !important;  
     /* no menu nav */
+}
+
+@media (max-width: 768px) {
+  nav ul.menu.active {
+    display: none !important;  
+  }
 }
 
 
